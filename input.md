@@ -4,11 +4,11 @@ author: Nullus
 mainfont: Alegreya
 citeproc: false
 filters:
-  - dociteproc
-  - citefield
+  - citeproc.lua
+  - citefield.lua
 ---
 
-# Filter Example
+# Citefield Example
 
 ## Heading
 

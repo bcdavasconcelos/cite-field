@@ -1,5 +1,5 @@
-input-files: ["test/input.md"]
+input-files: ['test/input.md']
+to: plain
 standalone: true
 filters:
-  - {type: lua, path: dociteproc.lua}
-  - {type: lua, path: citefield.lua}
+  - citefield.lua

@@ -13,12 +13,11 @@ on:
       - 'README.md'
       - LICENSE
       - .editorconfig
-  # Test if things still work each Tuesday morning at 5:39 UTC.
-  # This way we will catch incompatible pandoc changes in a timely
-  # manner.
+  # Test each week if things still work. This way we will catch
+  # incompatible pandoc changes in a timely manner.
   schedule:
-    # At 5:39am each Tuesday
-    - cron: '39 5 * * 2'
+    # At 3:27am each Tuesday
+    - cron: '27 3 * * 2'
 
 jobs:
   test:
@@ -29,8 +28,7 @@ jobs:
         pandoc:
           - edge
           - latest
-            # This should be the oldest version that's supported
-            # - 2.19.2
+          - 2.11
 
     container:
       image: pandoc/core:${{ matrix.pandoc }}
@@ -43,4 +41,4 @@ jobs:
         run: apk add make
 
       - name: Test
-        run: make test
+        run: make test PANDOC_VERSION=${{ matrix.pandoc }}
