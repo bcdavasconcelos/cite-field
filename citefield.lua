@@ -1,4 +1,4 @@
---- citefield.lua – an equivalent of the tex's citefield for citeproc
+--- citefield.lua – an equivalent for citeproc of latex's citefield command
 --- Copyright: © 2023 Albert Krewinkel & Bernardo Vasconcelos
 --- License: MIT – see LICENSE for details
 
