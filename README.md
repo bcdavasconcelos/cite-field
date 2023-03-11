@@ -33,6 +33,8 @@ abstract accessed annote archive archive_collection archive_location archive-pla
 
 Most entries will contain only a small subset of these. If an invalid field is specified, or if the value of the field is empty, the filter will return an *empty string*. The filter modifies the internal document representation; it can be used with many publishing systems that are based on Pandoc.
 
+Field with names, such as `author`, `editor` and `translator` only prints the family name of the first author, but we could think of a way to print all authors in the future.
+
 ### Plain Pandoc
 
 Pass the filter to Pandoc via the `--lua-filter` (or `-L`) command
