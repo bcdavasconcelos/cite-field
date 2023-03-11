@@ -1,9 +1,6 @@
 # Citefield for Pandoc Citeproc
 
-[![GitHub build status][CI badge]][CI workflow]
-
-[CI badge]: https://img.shields.io/github/actions/workflow/status/pandoc-ext/citefield/ci.yaml?logo=github&branch=main
-[CI workflow]: https://github.com/pandoc-ext/citefield/actions/workflows/ci.yaml
+<!-- [![GitHub build status][CI badge]][CI workflow] [CI badge]: https://img.shields.io/github/actions/workflow/status/pandoc-ext/citefield/ci.yaml?logo=github&branch=main [CI workflow]: https://github.com/pandoc-ext/citefield/actions/workflows/ci.yaml -->
 
 ## Background
 
