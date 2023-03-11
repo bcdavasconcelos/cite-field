@@ -1,4 +1,4 @@
-# Citeproc - Citefield
+# Citefield for Pandoc Citeproc
 
 [![GitHub build status][CI badge]][CI workflow]
 
@@ -26,19 +26,21 @@ The first argument is the `citekey`, the second argument is the CSL field / vari
 Possible CSL variables include:
 
 ```
-abstract, accessed, annote, archive, archive_collection, archive_location, archive-place, author, authority, available-date, call-number, chair, chapter-number, citation-key, citation-label, citation-number, collection-editor, collection-number, collection-title, compiler, composer, container-author, container-title, container-title-short, contributor, curator, dimensions, director, division, DOI, edition, editor, editor-translator, editorial-director, event, event-date, event-place, event-title, executive-producer, first-reference-note-number, genre, guest, host, illustrator, interviewer, ISBN, ISSN, issue, issued, jurisdiction, keyword, language, license, locator, medium, narrator, note, number, number-of-pages, number-of-volumes, organizer, original-author, original-date, original-publisher, original-publisher-place, original-title, page, page-first, part-number, part-title, performer, PMCID, PMID, printing-number, producer, publisher, publisher-place, recipient, references, reviewed-author, reviewed-genre, reviewed-title, scale, script-writer, section, series-creator, source, status, submitted, supplement-number, title, title-short, translator, URL, version, volume, volume-title, year-suffix
+abstract accessed annote archive archive_collection archive_location archive-place author authority available-date call-number chair chapter-number citation-key citation-label citation-number collection-editor collection-number collection-title compiler composer container-author container-title container-title-short contributor curator dimensions director division DOI edition editor editor-translator editorial-director event event-date event-place event-title executive-producer first-reference-note-number genre guest host illustrator interviewer ISBN ISSN issue issued jurisdiction keyword language license locator medium narrator note number number-of-pages number-of-volumes organizer original-author original-date original-publisher original-publisher-place original-title page page-first part-number part-title performer PMCID PMID printing-number producer publisher publisher-place recipient references reviewed-author reviewed-genre reviewed-title scale script-writer section series-creator source status submitted supplement-number title title-short translator URL version volume volume-title year-suffix
 ```
 
-Most entries will contain only a small subset of these. If an invalid field is specified, or if the value of the field is empty, the filter will return an empty string. It is compatible with other Lua Filters such as [citation-backlinks](https://github.com/tarleb/citation-backlinks), which must come AFTER `citefield` in the filter list, [and other great Lua filters](https://github.com/pandoc-ext?type=source).
+Most entries will contain only a small subset of these. If an invalid field is specified, or if the value of the field is empty, the filter will return an empty string.
 
 The filter modifies the internal document representation; it can be used with many publishing systems that are based on Pandoc.
 
 ### Plain pandoc
 
 Pass the filter to pandoc via the `--lua-filter` (or `-L`) command
-line option.
+line option. ==Please note that the filter must run AFTER citeproc.==
 
-    pandoc --lua-filter citefield.lua ...
+    pandoc --citeproc --lua-filter citefield.lua ...
+
+    pandoc -C --lua-filter citefield.lua ...
 
 ### Quarto
 
@@ -46,15 +48,32 @@ Users of Quarto can install this filter as an extension with
 
     quarto install extension bcdav/citefield
 
-and use it by adding `citefield` to the `filters` entry
-in their YAML header.
+and use it by adding `citefield` to the `filters` entry in their YAML header. To control the order of the filters, we will have to call citeproc from an external filter.
 
 ``` yaml
 ---
 filters:
+  - citeproc
   - citefield
 ---
 ```
+
+The content of `citeproc.lua` should be the following:
+
+```lua
+-- Lua filter that behaves like `--citeproc`
+function Pandoc (doc)
+  return pandoc.utils.citeproc(doc)
+end
+```
+
+For convenience, the `citeproc.lua` filter is already bundled with the extension.
+
+### Compatibility with other Lua filters
+
+The filter is compatible with other Lua Filters such as [citation-backlinks](https://github.com/tarleb/citation-backlinks), which must come AFTER `citefield` in the filter list.
+
+Other great filters can be found at [Pandoc Extensions](https://github.com/pandoc-ext?type=source).
 
 ### R Markdown
 
@@ -72,6 +91,6 @@ output:
 
 License
 ------------------------------------------------------------------
-
+Albert Krewinkel & contributors
 This pandoc Lua filter is published under the MIT license, see
 file `LICENSE` for details.
