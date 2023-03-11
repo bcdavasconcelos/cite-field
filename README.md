@@ -96,6 +96,6 @@ Other great filters likely to be compatible can be found at [Pandoc Extensions](
 
 License
 ------------------------------------------------------------------
-Albert Krewinkel & contributors (see source file for more information) 
-This Pandoc Lua filter is published under the MIT license, see
+Albert Krewinkel & contributors (see source file for more information)  
+This Pandoc Lua filter is published under the MIT license, see 
 file `LICENSE` for details.
