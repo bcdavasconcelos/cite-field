@@ -1,11 +1,18 @@
---- citefield.lua – an equivalent for citeproc of latex's citefield command
---- Use the syntax [@Citekey]{.field} to retrieve any valid CSL field (title, container-title, etc).
---- This filter *MUST* *RUN* *AFTER* Citeproc.
---- Copyright: © 2023 Albert Krewinkel & Bernardo Vasconcelos
+--- citefield.lua is citeproc alternative to latex's `\citefield`.
+--- Use the syntax [@Citekey]{.csl_field} to retrieve any valid CSL field (full list available the README file).
+--- For example, to retrieve the author's last name, use [@Citekey]{.author}.
+
+--- ATTENTION: This filter *MUST* *RUN* *AFTER* Citeproc.
+
+--- The original version of this script was generously contributed by Albert Krewinkel
+--- at the [Pandoc-Dicuss mailing list](https://groups.google.com/g/pandoc-discuss/c/5gb64T4OU9Q). 
+
+--- This version was modified by Bernardo Vasconcelos to include some small improvements. 
+--- It is being shared with permission (and at the request) of the original author for the benefit of Mr. Kite, there will be a show tonight, (...) no, just kidding, for the benefit of the community of Pandoc users.
+
+--- Copyright: © 2023 - Albert Krewinkel & contributors
 --- License: MIT – see LICENSE for details
 
--- Makes sure users know if their pandoc version is too old for this
--- filter.
 PANDOC_VERSION:must_be_at_least '2.17'
 
 local stringify = require 'pandoc.utils'.stringify
@@ -53,9 +60,7 @@ function Pandoc (doc)
           then
             the_link = the_result
           else
-
-              the_link = pandoc.Link(the_result, "#ref-"..cite_id)
-
+            the_link = pandoc.Link(the_result, "#ref-"..cite_id) -- TODO: use the value of `link-citations` metadata field to determine whether to add links
           end
           cite.content = {the_link}
           return cite

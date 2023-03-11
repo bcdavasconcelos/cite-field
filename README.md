@@ -29,13 +29,11 @@ Possible CSL variables include:
 abstract accessed annote archive archive_collection archive_location archive-place author authority available-date call-number chair chapter-number citation-key citation-label citation-number collection-editor collection-number collection-title compiler composer container-author container-title container-title-short contributor curator dimensions director division DOI edition editor editor-translator editorial-director event event-date event-place event-title executive-producer first-reference-note-number genre guest host illustrator interviewer ISBN ISSN issue issued jurisdiction keyword language license locator medium narrator note number number-of-pages number-of-volumes organizer original-author original-date original-publisher original-publisher-place original-title page page-first part-number part-title performer PMCID PMID printing-number producer publisher publisher-place recipient references reviewed-author reviewed-genre reviewed-title scale script-writer section series-creator source status submitted supplement-number title title-short translator URL version volume volume-title year-suffix
 ```
 
-Most entries will contain only a small subset of these. If an invalid field is specified, or if the value of the field is empty, the filter will return an empty string. 
+Most entries will contain only a small subset of these. If an invalid field is specified, or if the value of the field is empty, the filter will return an *empty string*. The filter modifies the internal document representation; it can be used with many publishing systems that are based on Pandoc.
 
-The filter modifies the internal document representation; it can be used with many publishing systems that are based on Pandoc.
+### Plain Pandoc
 
-### Plain pandoc
-
-Pass the filter to pandoc via the `--lua-filter` (or `-L`) command
+Pass the filter to Pandoc via the `--lua-filter` (or `-L`) command
 line option. **Please note that the filter must run AFTER Citeproc.**
 
     pandoc --citeproc --lua-filter citefield.lua ...
@@ -98,6 +96,6 @@ Other great filters likely to be compatible can be found at [Pandoc Extensions](
 
 License
 ------------------------------------------------------------------
-Albert Krewinkel & contributors (see `AUTHORS` file) 
+Albert Krewinkel & contributors (see source file for more information) 
 This Pandoc Lua filter is published under the MIT license, see
 file `LICENSE` for details.
