@@ -2,6 +2,7 @@
 title: Lorem ipsum
 author: Nullus
 mainfont: Alegreya
+link-citations: true
 citeproc: false
 filters:
   - citeproc.lua

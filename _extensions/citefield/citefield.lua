@@ -17,6 +17,15 @@ PANDOC_VERSION:must_be_at_least '2.17'
 
 local stringify = require 'pandoc.utils'.stringify
 
+function get_options(meta)
+  if meta['link-citations'] then
+      return {link_citations = meta['link-citations']}
+  else
+      return {}        
+  end
+end
+
+
 function Pandoc (doc)
   doc.meta.references = pandoc.utils.references(doc)
   doc.meta.bibliography = nil
@@ -60,7 +69,11 @@ function Pandoc (doc)
           then
             the_link = the_result
           else
-            the_link = pandoc.Link(the_result, "#ref-"..cite_id) -- TODO: use the value of `link-citations` metadata field to determine whether to add links
+            if get_options(doc.meta).link_citations then
+              the_link = pandoc.Link(the_result, "#ref-"..cite_id)
+            else
+              the_link = the_result
+            end
           end
           cite.content = {the_link}
           return cite
