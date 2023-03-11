@@ -1,6 +1,9 @@
 # Citefield for Pandoc Citeproc
 
-<!-- [![GitHub build status][CI badge]][CI workflow] [CI badge]: https://img.shields.io/github/actions/workflow/status/pandoc-ext/citefield/ci.yaml?logo=github&branch=main [CI workflow]: https://github.com/pandoc-ext/citefield/actions/workflows/ci.yaml -->
+<!-- [![GitHub build status][CI badge]][CI workflow] -->
+
+<!-- [CI badge]: https://img.shields.io/github/actions/workflow/status/pandoc-ext/citefield/ci.yaml?logo=github&branch=main
+[CI workflow]: https://github.com/pandoc-ext/citefield/actions/workflows/ci.yaml -->
 
 ## Background
 
@@ -11,6 +14,7 @@
 The first argument is the `citekey`, the second argument is the CSL field / variable name. 
 
 ``` markdown
+
 [@DA]{.author}, [@DA]{.title} <!-- One at a time -->
 [@DA]{.publisher}
 [@DA]{.page}
@@ -18,6 +22,7 @@ The first argument is the `citekey`, the second argument is the CSL field / vari
 [@Trott2014]{.issued}
 [@Trott2014]{.URL}
 [@DA; @Trott2014]{.title} <!-- ERROR: not allowed -->
+
 ```
 
 Possible CSL variables include: 
@@ -43,22 +48,13 @@ Users of Quarto can install this filter as an extension with
 
     quarto install extension bcdavasconcelos/citefield
 
-and use it by adding `citefield` to the `filters` entry in their YAML header. As this filter must run AFTER, Citeproc will have to be called from an external filter to control the order of execution. For convenience, a `citeproc.lua` filter is already bundled with the extension.
+and use it by adding `citefield` to the `filters` entry in their YAML header. For convenience, a `citeproc.lua` filter is already bundled with the extension as the `citefield` filter must run after *Citeproc* (which is currently not possible in Quarto without this work-around).
 
 ``` yaml
 ---
 filters:
-  - citeproc
   - citefield
 ---
-```
-
-The content of `citeproc.lua` is the following:
-
-```lua
-function Pandoc (doc)
-  return pandoc.utils.citeproc(doc)
-end
 ```
 
 ### R Markdown
@@ -82,7 +78,6 @@ The filter has been tested with [citation-backlinks](https://github.com/tarleb/c
 ``` yaml
 ---
 filters:
-  - citeproc
   - citefield
   - citation-backlinks
 ---
