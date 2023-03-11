@@ -14,13 +14,13 @@
 The first argument is the `citekey`, the second argument is the CSL field / variable name. 
 
 ``` markdown
-[@DA]{.title} <!-- Only one at a time -->
-[@DA]{.author}
+[@DA]{.author}, [@DA]{.title} <!-- One at a time -->
 [@DA]{.publisher}
-[@Trott2014]{.publisher}
-[@Trott2014]{.issued}
 [@DA]{.page}
+[@Trott2014]{.title}
+[@Trott2014]{.issued}
 [@Trott2014]{.URL}
+[@DA; @Trott2014]{.title} <!-- ERROR: not allowed -->
 ```
 
 Possible CSL variables include: 
@@ -36,7 +36,7 @@ The filter modifies the internal document representation; it can be used with ma
 ### Plain pandoc
 
 Pass the filter to pandoc via the `--lua-filter` (or `-L`) command
-line option. ==Please note that the filter must run AFTER citeproc.==
+line option. **Please note that the filter must run AFTER Citeproc.**
 
     pandoc --citeproc --lua-filter citefield.lua ...
 
@@ -82,7 +82,7 @@ output:
 
 ### Compatibility with other Lua filters
 
-The filter is compatible with other Lua Filters such as [citation-backlinks](https://github.com/tarleb/citation-backlinks), which must run AFTER `citefield`.
+The filter has been tested with [citation-backlinks](https://github.com/tarleb/citation-backlinks), that must run AFTER `citefield`.
 
 ``` yaml
 ---
@@ -93,7 +93,7 @@ filters:
 ---
 ```
 
-Other great filters can be found at [Pandoc Extensions](https://github.com/pandoc-ext?type=source). 
+Other great filters likely to be compatible can be found at [Pandoc Extensions](https://github.com/pandoc-ext?type=source). 
 
 
 License
