@@ -17,6 +17,8 @@ The first argument is the `citekey`, the second argument is the CSL field / vari
 
 - `[@DA]{.title}` will return the title of the reference with the citekey `DA`.
 
+<img width="485" alt="image" src="https://user-images.githubusercontent.com/35749099/226025326-711734f0-33c9-466d-9432-5d5459f2410b.png">
+
 ### Links
 
 If the global option `link-citations` is set to `true` (default), all citations processed by the filter will link to the bibliography. 
@@ -28,6 +30,10 @@ Alternatively, you can diable the creation of links in *ad hoc* fashion, for a s
 - `[@DA]{.author.}`
 - `[@DA]{.title.}`
 
+<img width="561" alt="image" src="https://user-images.githubusercontent.com/35749099/226024919-2135c159-339a-44c8-91c5-0b786de5ca94.png">
+
+
+
 ### Names
 
 Fields with names, such as `author`, `editor` and `translator` will return the family name of the `first` author/editor or translator by default. 
@@ -35,12 +41,13 @@ Fields with names, such as `author`, `editor` and `translator` will return the f
 You can change this by adding `_first`, `_second`, `_third` or `_forth` to the csl_field name. 
 
 - `[@ENSusemihlApelt1903]{.editor_first}` will return the family name of the first editor.  
-- `[@ENSusemihlApelt1903]{.editor_second}` will return the family name of the second editor.  
+- `[@ENSusemihlApelt1903]{.editor_second}` will return the family name of the second editor. 
 
 You can use both options in tandem:
 
 - `[@ENSusemihlApelt1903]{.editor_second.}` will return the family name of the second editor without creating a link.  
 
+<img width="625" alt="image" src="https://user-images.githubusercontent.com/35749099/226025864-5cb26a8a-24e8-4a6a-a138-fe6d1daed8d3.png">
 
 
 ### Multiple Citations
@@ -64,6 +71,8 @@ abstract accessed annote archive archive_collection archive_location archive-pla
 ```
 
 Most entries will contain only a small subset of these. If an invalid field is specified, or if the value of the field is empty, the filter will return an error message. 
+
+<img width="423" alt="image" src="https://user-images.githubusercontent.com/35749099/226026483-5cf485a3-3c9f-40ce-8d3c-77d430d94fa7.png">
 
 The filter modifies the internal document representation; it can be used with many publishing systems that are based on Pandoc.
 
