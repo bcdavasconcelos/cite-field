@@ -18,8 +18,9 @@ PANDOC_VERSION:must_be_at_least '2.17'
 local stringify = require 'pandoc.utils'.stringify
 
 function get_options(meta)
-  if meta['link-citations'] then
-      return {link_citations = meta['link-citations']}
+
+  if meta['link-citations'] or meta['link-fields'] then
+      return {link_citations = meta['link-citations'], link_fields = meta['link-fields']}
   else
       return {}        
   end
@@ -90,8 +91,6 @@ function Pandoc (doc)
         else
           return "#ERROR: Invalid CSL Field#"
       end
-      -- print(citations[1].id)
-      print(the_arg)
       local cite_id = citations[1].id
       local ref = doc.meta.references:find_if(
         function (r) return cite_id == r.id end
@@ -128,7 +127,7 @@ function Pandoc (doc)
         else -- return the span unchanged
           the_result = span
         end
-        print (get_options(doc.meta).link_citations == false)
+        -- print (get_options(doc.meta).link_citations == false)
         -- print(the_result)
         if dotted == true
         or the_arg == "notes"
@@ -139,7 +138,7 @@ function Pandoc (doc)
         then
           return the_result
           else
-            if get_options(doc.meta).link_citations == true then
+            if get_options(doc.meta).link_citations == true and get_options(doc.meta).link_fields ~= false then
               the_result = pandoc.Link(the_result, "#ref-"..cite_id)
               cite.content = {the_result}
               return cite

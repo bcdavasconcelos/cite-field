@@ -1,6 +1,7 @@
 ---
 title: Lorem ipsum
 author: Nullus
+link-fields: false
 mainfont: Alegreya
 citeproc: false
 filters:
