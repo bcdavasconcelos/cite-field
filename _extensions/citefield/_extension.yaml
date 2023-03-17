@@ -1,6 +1,6 @@
 name: citefield
-author: Albert Krewinkel & Bernardo Vasconcelos
-version: 1.0.0
+author: Albert Krewinkel & Bernardo CDA Vasconcelos
+version: 1.0.1
 contributes:
   filters:
     - citeproc.lua
