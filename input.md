@@ -13,7 +13,7 @@ filters:
 # *Cite field*
 
 Syntax: `[@Citekey]{.csl_field}`  
-[set]{.teste}  
+
 author: [@Trott2014]{.author}  
 title: [@Trott2014]{.title}  
 

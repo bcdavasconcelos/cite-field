@@ -91,9 +91,13 @@ filters:
 
 Other great filters likely to be compatible can be found at [Pandoc Extensions](https://github.com/pandoc-ext?type=source). 
 
-
 License
 ------------------------------------------------------------------
-Albert Krewinkel & contributors (see source file for more information)  
+Albert Krewinkel & Bernardo CDA Vasconcelos  
 This Pandoc Lua filter is published under the MIT license, see 
 file `LICENSE` for details.
+
+The original version of this script was generously contributed by [Albert Krewinkel](https://github.com/tarleb) to the [Pandoc-Dicuss mailing list](https://groups.google.com/g/pandoc-discuss/c/5gb64T4OU9Q). It is being shared with permission (and at the request) of the original author for the benefit of the community of Pandoc users.
+
+The current version was modified by Bernardo CDA Vasconcelos to include error msgs, csl-field validation, making all field retrievable (including items in lists), and adding emph for titles. 
+
