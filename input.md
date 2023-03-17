@@ -14,13 +14,13 @@ filters:
 
 Syntax: `[@Citekey]{.csl_field}`  
 
-author: [@Trott2014]{.author}  
-title: [@Trott2014]{.title}  
+[@Trott2014]{.author}, [@Trott2014]{.title}  <!-- One at a time -->  
+[@DA; @Trott2014]{.title}  <!-- Not allowed -->  
 
 author: [@DA]{.author}  
 abbreviation: [@DA]{.title-short}  
 title: [@DA]{.title}  
-origtitle: [@DA]{.original-title}  
+origtitle: [@DA]{.original-title}
 
 ## *Cite field* with no link
 

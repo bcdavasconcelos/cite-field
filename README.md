@@ -5,25 +5,57 @@
 <!-- [CI badge]: https://img.shields.io/github/actions/workflow/status/pandoc-ext/citefield/ci.yaml?logo=github&branch=main
 [CI workflow]: https://github.com/pandoc-ext/citefield/actions/workflows/ci.yaml -->
 
-## Background
+## Motivation
 
-[BibLaTeX](https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf) has a command called *citefield* -- *e.g.* `\citefield{citekey}{field}` -- that allows printing the value of any field of a bibliographic entry. This Lua filter provides a similar functionality for [Citeproc](https://github.com/jgm/citeproc) using [Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) syntax: `[@Citekey]{.field}`.
+[BibLaTeX](https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf) has a command called *citefield* -- *e.g.* `\citefield{citekey}{field}` -- that allows printing the value of any field of a bibliographic entry. 
 
-## Syntax
+This Lua filter provides a similar functionality for [Citeproc](https://github.com/jgm/citeproc) using [Pandoc Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) syntax.
+
+## Basics
 
 The first argument is the `citekey`, the second argument is the CSL field / variable name. 
 
-``` markdown
+- `[@DA]{.title}` will return the title of the reference with the citekey `DA`.
 
-[@DA]{.author}, [@DA]{.title} <!-- One at a time -->
-[@DA]{.publisher}
-[@DA]{.page}
-[@Trott2014]{.title}
-[@Trott2014]{.issued}
-[@Trott2014]{.URL}
-[@DA; @Trott2014]{.title} <!-- ERROR: not allowed -->
+### Links
 
-```
+If the global option `link-citations` is set to `true` (default), all citations processed by the filter will link to the bibliography. 
+
+You can turn this off by either globally disabling links with `link-citations: false` or disabling it only for the citations processed by the filter, with `link-fields: false`.
+
+Alternatively, you can diable the creation of links in *ad hoc* fashion, for a specific citation, by adding a dot at the end of the field name.
+
+- `[@DA]{.author.}`
+- `[@DA]{.title.}`
+
+### Names
+
+Fields with names, such as `author`, `editor` and `translator` will return the family name of the `first` author/editor or translator by default. 
+
+You can change this by adding `_first`, `_second`, `_third` or `_forth` to the csl_field name. 
+
+- `[@ENSusemihlApelt1903]{.editor_first}` will return the family name of the first editor.  
+- `[@ENSusemihlApelt1903]{.editor_second}` will return the family name of the second editor.  
+
+You can use both options in tandem:
+
+- `[@ENSusemihlApelt1903]{.editor_second.}` will return the family name of the second editor without creating a link.  
+
+
+
+### Multiple Citations
+
+Use one `citation` at a time and a single `csl_field` name.
+
+**NOT** allowed: ~~`[@DA]{.author .title}`~~   
+Alternative: `[@DA]{.author} [@DA]{.title}`  
+
+
+**NOT** allowed: ~~`[@DA; @Trott2014]{.title}`~~  
+Alternative: `[@DA]{.title} [@Trott2014]{.title}` 
+  
+
+### CSL Fields
 
 Possible CSL variables include: 
 
@@ -31,18 +63,19 @@ Possible CSL variables include:
 abstract accessed annote archive archive_collection archive_location archive-place author authority available-date call-number chair chapter-number citation-key citation-label citation-number collection-editor collection-number collection-title compiler composer container-author container-title container-title-short contributor curator dimensions director division DOI edition editor editor-translator editorial-director event event-date event-place event-title executive-producer first-reference-note-number genre guest host illustrator interviewer ISBN ISSN issue issued jurisdiction keyword language license locator medium narrator note notes number number-of-pages number-of-volumes organizer original-author original-date original-publisher original-publisher-place original-title page page-first part-number part-title performer PMCID PMID printing-number producer publisher publisher-place recipient references reviewed-author reviewed-genre reviewed-title scale script-writer section series-creator source status submitted supplement-number title title-short translator URL version volume volume-title year-suffix
 ```
 
-Most entries will contain only a small subset of these. If an invalid field is specified, or if the value of the field is empty, the filter will return an error message warning in the inline citation warning about it. The filter modifies the internal document representation; it can be used with many publishing systems that are based on Pandoc.
+Most entries will contain only a small subset of these. If an invalid field is specified, or if the value of the field is empty, the filter will return an error message. 
 
-Fields with names, such as `author`, `editor` and `translator` will return the family name of the first author/editor or translator by default. You can change this by adding `_first`, `_second`, `_third` or `_forth` to the csl_field name. For example, `[@DA]{.author_first}` will return the family name of the first author.
+The filter modifies the internal document representation; it can be used with many publishing systems that are based on Pandoc.
 
-Aditionally, you have the option of not creating a link to the bibliography entry by adding an extra dot `.` to the csl_field name. For example, `[@DA]{.author.}` will return the family name of the first author without creating a link to the bibliography entry. You can mix both options as in `[@DA]{.author_second.}`
-
-Finally, you can use the option `link-fields` (default: `true`) in the YAML metadata to globally disable the creation of links to the bibliography entry. So `link-fields: false` will disable the creation of links for all fields cited. This will not afect the creation of links for other citations.
+## Usage
 
 ### Plain Pandoc
 
 Pass the filter to Pandoc via the `--lua-filter` (or `-L`) command
-line option. **Please note that the filter must run AFTER Citeproc.**
+line option. 
+
+**Please note that the filter must run AFTER Citeproc.**
+
 
     pandoc --citeproc --lua-filter citefield.lua ...
 
