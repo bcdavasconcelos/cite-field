@@ -37,7 +37,7 @@ Fields with names, such as `author`, `editor` and `translator` will return the f
 
 Aditionally, you have the option of not creating a link to the bibliography entry by adding an extra dot `.` to the csl_field name. For example, `[@DA]{.author.}` will return the family name of the first author without creating a link to the bibliography entry. You can mix both options as in `[@DA]{.author_second.}`
 
-Finally, you can use the option `link-fields` (default: `true`) in the YAML metadata to globally disable the creation of links to the bibliography entry. So `link-fields: false` will disable the creation of links for all fields cited. 
+Finally, you can use the option `link-fields` (default: `true`) in the YAML metadata to globally disable the creation of links to the bibliography entry. So `link-fields: false` will disable the creation of links for all fields cited. This will not afect the creation of links for other citations.
 
 ### Plain Pandoc
 

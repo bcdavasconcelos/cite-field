@@ -1,7 +1,8 @@
 ---
 title: Lorem ipsum
 author: Nullus
-link-fields: false
+link-fields: true
+link-citations: true
 mainfont: Alegreya
 citeproc: false
 filters:
@@ -11,9 +12,7 @@ filters:
 
 # *Cite field*
 
-
 Syntax: `[@Citekey]{.csl_field}`  
-
 
 author: [@Trott2014]{.author}  
 title: [@Trott2014]{.title}  
