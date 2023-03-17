@@ -86,34 +86,42 @@ div.csl-indent {
 
 </header>
 
-<section id="citefield-example" class="level1">
-<h1>Citefield Example</h1>
-<section id="heading" class="level2">
-<h2 class="anchored" data-anchor-id="heading">Heading</h2>
-<p><span class="citation" data-cites="DA Trott2014">(<a href="#ref-DA" role="doc-biblioref">Aristotle 1831</a>; <a href="#ref-Trott2014" role="doc-biblioref">Trott 2014</a>)</span></p>
+<section id="cite-field" class="level1">
+<h1><em>Cite field</em></h1>
+<p>Syntax: <code>[@Citekey]{.csl_field}</code></p>
 <p>author: <span class="citation" data-cites="Trott2014"><a href="#ref-Trott2014" role="doc-biblioref">Trott</a></span><br>
-title: <span class="citation" data-cites="Trott2014"><a href="#ref-Trott2014" role="doc-biblioref"><em>Aristotle on the nature of community</em></a></span><br>
-publisher: <span class="citation" data-cites="Trott2014"><a href="#ref-Trott2014" role="doc-biblioref">CUP</a></span><br>
-place: <span class="citation" data-cites="Trott2014"><a href="#ref-Trott2014" role="doc-biblioref">2014</a></span><br>
-page: <span class="citation" data-cites="Trott2014"><a href="#ref-Trott2014" role="doc-biblioref">xiii-239</a></span><br>
-url: <span class="citation" data-cites="Trott2014"><a href="#ref-Trott2014" role="doc-biblioref">www.google.com</a></span></p>
+title: <span class="citation" data-cites="Trott2014"><a href="#ref-Trott2014" role="doc-biblioref"><em>Aristotle on the nature of community</em></a></span></p>
 <p>author: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref">Aristotle</a></span><br>
-abbreviation: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref">DA</a></span><br>
+abbreviation: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref"><em>DA</em></a></span><br>
 title: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref"><em>De anima</em></a></span><br>
-origtitle: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref">Περὶ ψυχῆς</a></span><br>
-pages: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref">402a01-435b25</a></span><br>
-container: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref">Aristotelis opera</a></span><br>
-tlg-code: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref">0086.002</a></span><br>
-publisher: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref">Reimer</a></span><br>
-place: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref">Berlim</a></span><br>
-keywords: <span class="citation" data-cites="DA">primary sources, ancient philosophy, ancient greek</span><br>
-date: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref">1831</a></span><br>
-notes: <span class="citation" data-cites="DA">On the Soul (Greek: Περὶ Ψυχῆς, Peri Psychēs; Latin: De Anima) is a major treatise written by Aristotle c.&nbsp;350 BC. His discussion centres on the kinds of souls possessed by different kinds of living things, distinguished by their different operations. Thus plants have the capacity for nourishment and reproduction, the minimum that must be possessed by any kind of living organism. Lower animals have, in addition, the powers of sense-perception and self-motion (action). Humans have all these as well as intellect.</span></p>
+origtitle: <span class="citation" data-cites="DA"><a href="#ref-DA" role="doc-biblioref">Περὶ ψυχῆς</a></span></p>
+<section id="cite-field-with-no-link" class="level2">
+<h2 class="anchored" data-anchor-id="cite-field-with-no-link"><em>Cite field</em> with no link</h2>
+<p>Syntax: <code>[@Citekey]{.csl_field.}</code><br>
+<em>Add extra dot at the end of the field name.</em></p>
+<p>author: Trott<br>
+title: <em>Aristotle on the nature of community</em></p>
+</section>
+<section id="cite-field-with-index" class="level2">
+<h2 class="anchored" data-anchor-id="cite-field-with-index"><em>Cite field</em> with index</h2>
+<p>Syntax: <code>[@Citekey]{.editor_first}</code> | <code>[@Citekey]{.editor_second}</code> | <code>[@Citekey]{.editor_third}</code></p>
+<p>editor 1: <span class="citation" data-cites="ENSusemihlApelt1903"><a href="#ref-ENSusemihlApelt1903" role="doc-biblioref">Susemihl</a></span><br>
+editor 2: <span class="citation" data-cites="ENSusemihlApelt1903"><a href="#ref-ENSusemihlApelt1903" role="doc-biblioref">Apelt</a></span></p>
+<p>editor 1: Susemihl<br>
+editor 2: Apelt</p>
+</section>
+<section id="error-trapping" class="level2">
+<h2 class="anchored" data-anchor-id="error-trapping">Error trapping</h2>
+<p>Invalid field: #ERROR: Invalid CSL Field#<br>
+Empty field: #ERROR: [ENSusemihlApelt1903][editor][3] is empty#</p>
 </section>
 </section>
 <section id="bibliography" class="level1 unnumbered">
 <h1 class="unnumbered">Bibliography</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-ENSusemihlApelt1903" class="csl-entry" role="doc-biblioentry">
+Aristotelis. 1903. <em>Ethica Nicomachea</em>. Edited by Franz Susemihl and Otto Apelt. Leipzig: Teubner.
+</div>
 <div id="ref-DA" class="csl-entry" role="doc-biblioentry">
 Aristotle. 1831. <span>“De Anima.”</span> In <em>Aristotelis Opera</em>, edited by Immanuel Bekker, 402a01–435b25. Berlim: Reimer. <a href="https://www.google.com">www.google.com</a>.
 </div>
