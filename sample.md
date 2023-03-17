@@ -10,6 +10,12 @@ filters:
   - citefield.lua
 ---
 
+
+- [@DA]{.author.}  
+- [@DA]{.title.}  
+
+
+
 # *Cite field*
 
 Syntax: `[@Citekey]{.csl_field}`  
