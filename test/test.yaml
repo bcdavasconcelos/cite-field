@@ -1,5 +1,0 @@
-input-files: ['test/input.md']
-to: plain
-standalone: true
-filters:
-  - citefield.lua
