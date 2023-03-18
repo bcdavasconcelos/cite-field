@@ -1,4 +1,6 @@
-# Citefield for Pandoc Citeproc
+# Cite Field for Pandoc Citeproc
+
+This filter is part of [📚 Cite Tools for Pandoc and Quarto](https://github.com/bcdavasconcelos/citetools).
 
 <!-- [![GitHub build status][CI badge]][CI workflow] -->
 
