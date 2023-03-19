@@ -1,1 +1,1 @@
-_extensions/citefield/citefield.lua
+_extensions/citefield/citeproc.lua

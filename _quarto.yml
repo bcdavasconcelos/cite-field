@@ -11,7 +11,7 @@ csl: chicago-author-date-with-note.csl
 filters:
 - citeproc
 - citefield
-# - quarto
+- quarto
 
 profile:
   group: ['generate','test']

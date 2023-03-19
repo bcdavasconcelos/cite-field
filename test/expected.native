@@ -1,0 +1,822 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "author" , MetaInlines [ Str "Nullus" ] )
+          , ( "csl"
+            , MetaString
+                "/Users/bcdav/Dropbox/Application Support/pandoc/quarto/citefield/test/chicago-author-date-with-note.csl"
+            )
+          , ( "link-citations" , MetaBool True )
+          , ( "link-fields" , MetaBool True )
+          , ( "references"
+            , MetaList
+                [ MetaMap
+                    (fromList
+                       [ ( "URL"
+                         , MetaInlines [ Str "www.google.com" ]
+                         )
+                       , ( "author"
+                         , MetaList
+                             [ MetaMap
+                                 (fromList
+                                    [ ( "family" , MetaString "Trott" )
+                                    , ( "given"
+                                      , MetaString "Adriel M."
+                                      )
+                                    ])
+                             ]
+                         )
+                       , ( "id" , MetaString "Trott2014" )
+                       , ( "issued"
+                         , MetaMap
+                             (fromList
+                                [ ( "date-parts"
+                                  , MetaList
+                                      [ MetaList [ MetaString "2014" ] ]
+                                  )
+                                ])
+                         )
+                       , ( "page" , MetaInlines [ Str "xiii-239" ] )
+                       , ( "publisher" , MetaInlines [ Str "CUP" ] )
+                       , ( "title"
+                         , MetaInlines
+                             [ Str "Aristotle"
+                             , Space
+                             , Str "on"
+                             , Space
+                             , Str "the"
+                             , Space
+                             , Str "nature"
+                             , Space
+                             , Str "of"
+                             , Space
+                             , Str "community"
+                             ]
+                         )
+                       , ( "type" , MetaString "book" )
+                       ])
+                , MetaMap
+                    (fromList
+                       [ ( "URL"
+                         , MetaInlines [ Str "www.google.com" ]
+                         )
+                       , ( "author"
+                         , MetaList
+                             [ MetaMap
+                                 (fromList
+                                    [ ( "family"
+                                      , MetaString "Aristotle"
+                                      )
+                                    ])
+                             ]
+                         )
+                       , ( "call-number"
+                         , MetaInlines [ Str "0086.002" ]
+                         )
+                       , ( "container-title"
+                         , MetaInlines
+                             [ Str "Aristotelis" , Space , Str "opera" ]
+                         )
+                       , ( "editor"
+                         , MetaList
+                             [ MetaMap
+                                 (fromList
+                                    [ ( "family" , MetaString "Bekker" )
+                                    , ( "given"
+                                      , MetaString "Immanuel"
+                                      )
+                                    ])
+                             ]
+                         )
+                       , ( "id" , MetaString "DA" )
+                       , ( "issued"
+                         , MetaMap
+                             (fromList
+                                [ ( "date-parts"
+                                  , MetaList
+                                      [ MetaList [ MetaString "1831" ] ]
+                                  )
+                                ])
+                         )
+                       , ( "keyword"
+                         , MetaInlines
+                             [ Str "primary"
+                             , Space
+                             , Str "sources,"
+                             , Space
+                             , Str "ancient"
+                             , Space
+                             , Str "philosophy,"
+                             , Space
+                             , Str "ancient"
+                             , Space
+                             , Str "greek"
+                             ]
+                         )
+                       , ( "notes"
+                         , MetaInlines
+                             [ Str "On"
+                             , Space
+                             , Str "the"
+                             , Space
+                             , Str "Soul"
+                             , Space
+                             , Str "(Greek:"
+                             , Space
+                             , Str "\928\949\961\8054"
+                             , Space
+                             , Str "\936\965\967\8134\962,"
+                             , Space
+                             , Str "Peri"
+                             , Space
+                             , Str "Psych\275s;"
+                             , Space
+                             , Str "Latin:"
+                             , Space
+                             , Str "De"
+                             , Space
+                             , Str "Anima)"
+                             , Space
+                             , Str "is"
+                             , Space
+                             , Str "a"
+                             , Space
+                             , Str "major"
+                             , Space
+                             , Str "treatise"
+                             , Space
+                             , Str "written"
+                             , Space
+                             , Str "by"
+                             , Space
+                             , Str "Aristotle"
+                             , Space
+                             , Str "c.\160\&350"
+                             , Space
+                             , Str "BC."
+                             , Space
+                             , Str "His"
+                             , Space
+                             , Str "discussion"
+                             , Space
+                             , Str "centres"
+                             , Space
+                             , Str "on"
+                             , Space
+                             , Str "the"
+                             , Space
+                             , Str "kinds"
+                             , Space
+                             , Str "of"
+                             , Space
+                             , Str "souls"
+                             , Space
+                             , Str "possessed"
+                             , Space
+                             , Str "by"
+                             , Space
+                             , Str "different"
+                             , Space
+                             , Str "kinds"
+                             , Space
+                             , Str "of"
+                             , Space
+                             , Str "living"
+                             , Space
+                             , Str "things,"
+                             , Space
+                             , Str "distinguished"
+                             , Space
+                             , Str "by"
+                             , Space
+                             , Str "their"
+                             , Space
+                             , Str "different"
+                             , Space
+                             , Str "operations."
+                             , Space
+                             , Str "Thus"
+                             , Space
+                             , Str "plants"
+                             , Space
+                             , Str "have"
+                             , Space
+                             , Str "the"
+                             , Space
+                             , Str "capacity"
+                             , Space
+                             , Str "for"
+                             , Space
+                             , Str "nourishment"
+                             , Space
+                             , Str "and"
+                             , Space
+                             , Str "reproduction,"
+                             , Space
+                             , Str "the"
+                             , Space
+                             , Str "minimum"
+                             , Space
+                             , Str "that"
+                             , Space
+                             , Str "must"
+                             , Space
+                             , Str "be"
+                             , Space
+                             , Str "possessed"
+                             , Space
+                             , Str "by"
+                             , Space
+                             , Str "any"
+                             , Space
+                             , Str "kind"
+                             , Space
+                             , Str "of"
+                             , Space
+                             , Str "living"
+                             , Space
+                             , Str "organism."
+                             , Space
+                             , Str "Lower"
+                             , Space
+                             , Str "animals"
+                             , Space
+                             , Str "have,"
+                             , Space
+                             , Str "in"
+                             , Space
+                             , Str "addition,"
+                             , Space
+                             , Str "the"
+                             , Space
+                             , Str "powers"
+                             , Space
+                             , Str "of"
+                             , Space
+                             , Str "sense-perception"
+                             , Space
+                             , Str "and"
+                             , Space
+                             , Str "self-motion"
+                             , Space
+                             , Str "(action)."
+                             , Space
+                             , Str "Humans"
+                             , Space
+                             , Str "have"
+                             , Space
+                             , Str "all"
+                             , Space
+                             , Str "these"
+                             , Space
+                             , Str "as"
+                             , Space
+                             , Str "well"
+                             , Space
+                             , Str "as"
+                             , Space
+                             , Str "intellect."
+                             ]
+                         )
+                       , ( "original-title"
+                         , MetaInlines
+                             [ Str "\928\949\961\8054"
+                             , Space
+                             , Str "\968\965\967\8134\962"
+                             ]
+                         )
+                       , ( "page"
+                         , MetaInlines [ Str "402a01-435b25" ]
+                         )
+                       , ( "publisher" , MetaInlines [ Str "Reimer" ] )
+                       , ( "publisher-place"
+                         , MetaInlines [ Str "Berlim" ]
+                         )
+                       , ( "title"
+                         , MetaInlines
+                             [ Str "De" , Space , Str "anima" ]
+                         )
+                       , ( "title-short" , MetaInlines [ Str "DA" ] )
+                       , ( "type" , MetaString "chapter" )
+                       ])
+                , MetaMap
+                    (fromList
+                       [ ( "author"
+                         , MetaList
+                             [ MetaMap
+                                 (fromList
+                                    [ ( "family"
+                                      , MetaString "Aristotelis"
+                                      )
+                                    ])
+                             ]
+                         )
+                       , ( "call-number" , MetaInlines [ Str "86.01" ] )
+                       , ( "editor"
+                         , MetaList
+                             [ MetaMap
+                                 (fromList
+                                    [ ( "family"
+                                      , MetaString "Susemihl"
+                                      )
+                                    , ( "given" , MetaString "Franz" )
+                                    ])
+                             , MetaMap
+                                 (fromList
+                                    [ ( "family" , MetaString "Apelt" )
+                                    , ( "given" , MetaString "Otto" )
+                                    ])
+                             ]
+                         )
+                       , ( "id" , MetaString "ENSusemihlApelt1903" )
+                       , ( "issued"
+                         , MetaMap
+                             (fromList
+                                [ ( "date-parts"
+                                  , MetaList
+                                      [ MetaList [ MetaString "1903" ] ]
+                                  )
+                                ])
+                         )
+                       , ( "publisher" , MetaInlines [ Str "Teubner" ] )
+                       , ( "publisher-place"
+                         , MetaInlines [ Str "Leipzig" ]
+                         )
+                       , ( "title"
+                         , MetaInlines
+                             [ Str "Ethica" , Space , Str "nicomachea" ]
+                         )
+                       , ( "type" , MetaString "book" )
+                       ])
+                ]
+            )
+          , ( "title"
+            , MetaInlines [ Str "Cite" , Space , Str "Field" ]
+            )
+          ]
+    }
+  [ Para
+      [ Str "Syntax:"
+      , Space
+      , Code ( "" , [] , [] ) "[@Citekey]{.csl_field}"
+      ]
+  , Para
+      [ Str "This:"
+      , Space
+      , Code
+          ( "" , [] , [] )
+          "[@Trott2014]{.author}, [@Trott2014]{.title}"
+      , Space
+      , Str "\9989"
+      , SoftBreak
+      , Str "Will"
+      , Space
+      , Str "render"
+      , Space
+      , Str "as:"
+      , Space
+      , Cite
+          [ Citation
+              { citationId = "Trott2014"
+              , citationPrefix = []
+              , citationSuffix = []
+              , citationMode = AuthorInText
+              , citationNoteNum = 1
+              , citationHash = 0
+              }
+          ]
+          [ Link
+              ( "" , [] , [] ) [ Str "Trott" ] ( "#ref-Trott2014" , "" )
+          ]
+      , Str ","
+      , Space
+      , Cite
+          [ Citation
+              { citationId = "Trott2014"
+              , citationPrefix = []
+              , citationSuffix = []
+              , citationMode = AuthorInText
+              , citationNoteNum = 2
+              , citationHash = 0
+              }
+          ]
+          [ Link
+              ( "" , [] , [] )
+              [ Emph [ Str "Aristotle on the nature of community" ] ]
+              ( "#ref-Trott2014" , "" )
+          ]
+      , Str "."
+      ]
+  , Para
+      [ Str "This:"
+      , Space
+      , Code ( "" , [] , [] ) "[@DA; @Trott2014]{.title}"
+      , Space
+      , Str "\10060"
+      , SoftBreak
+      , Str "Will"
+      , Space
+      , Str "render"
+      , Space
+      , Str "as:"
+      , Space
+      , Span
+          ( "" , [ "title" ] , [] )
+          [ Cite
+              [ Citation
+                  { citationId = "DA"
+                  , citationPrefix = []
+                  , citationSuffix = []
+                  , citationMode = AuthorInText
+                  , citationNoteNum = 3
+                  , citationHash = 0
+                  }
+              ]
+              [ Str "Aristotle"
+              , Space
+              , Str "("
+              , Link ( "" , [] , [] ) [ Str "1831" ] ( "#ref-DA" , "" )
+              , Str ")"
+              ]
+          , Str ";"
+          , Space
+          , Cite
+              [ Citation
+                  { citationId = "Trott2014"
+                  , citationPrefix = []
+                  , citationSuffix = []
+                  , citationMode = AuthorInText
+                  , citationNoteNum = 4
+                  , citationHash = 0
+                  }
+              ]
+              [ Str "Trott"
+              , Space
+              , Str "("
+              , Link
+                  ( "" , [] , [] )
+                  [ Str "2014" ]
+                  ( "#ref-Trott2014" , "" )
+              , Str ")"
+              ]
+          ]
+      , Str "."
+      ]
+  , Para
+      [ Str "author:"
+      , Space
+      , Cite
+          [ Citation
+              { citationId = "DA"
+              , citationPrefix = []
+              , citationSuffix = []
+              , citationMode = AuthorInText
+              , citationNoteNum = 5
+              , citationHash = 0
+              }
+          ]
+          [ Link
+              ( "" , [] , [] ) [ Str "Aristotle" ] ( "#ref-DA" , "" )
+          ]
+      , Space
+      , Str "("
+      , Code ( "" , [] , [] ) "[@DA]{.author}"
+      , Str ")"
+      , SoftBreak
+      , Str "abbreviation:"
+      , Space
+      , Cite
+          [ Citation
+              { citationId = "DA"
+              , citationPrefix = []
+              , citationSuffix = []
+              , citationMode = AuthorInText
+              , citationNoteNum = 6
+              , citationHash = 0
+              }
+          ]
+          [ Link
+              ( "" , [] , [] ) [ Emph [ Str "DA" ] ] ( "#ref-DA" , "" )
+          ]
+      , Space
+      , Str "("
+      , Code ( "" , [] , [] ) "[@DA]{.title-short}"
+      , Str ")"
+      , SoftBreak
+      , Str "title:"
+      , Space
+      , Cite
+          [ Citation
+              { citationId = "DA"
+              , citationPrefix = []
+              , citationSuffix = []
+              , citationMode = AuthorInText
+              , citationNoteNum = 7
+              , citationHash = 0
+              }
+          ]
+          [ Link
+              ( "" , [] , [] )
+              [ Emph [ Str "De anima" ] ]
+              ( "#ref-DA" , "" )
+          ]
+      , Space
+      , Str "("
+      , Code ( "" , [] , [] ) "[@DA]{.title}"
+      , Str ")"
+      , SoftBreak
+      , Str "origtitle:"
+      , Space
+      , Cite
+          [ Citation
+              { citationId = "DA"
+              , citationPrefix = []
+              , citationSuffix = []
+              , citationMode = AuthorInText
+              , citationNoteNum = 8
+              , citationHash = 0
+              }
+          ]
+          [ Link
+              ( "" , [] , [] )
+              [ Str "\928\949\961\8054"
+              , Space
+              , Str "\968\965\967\8134\962"
+              ]
+              ( "#ref-DA" , "" )
+          ]
+      , Space
+      , Str "("
+      , Code ( "" , [] , [] ) "[@DA]{.original-title}"
+      , Str ")"
+      ]
+  , Header
+      2
+      ( "cite-field-with-no-link" , [] , [] )
+      [ Emph [ Str "Cite" , Space , Str "field" ]
+      , Space
+      , Str "with"
+      , Space
+      , Str "no"
+      , Space
+      , Str "link"
+      ]
+  , Para
+      [ Str "Syntax:"
+      , Space
+      , Code ( "" , [] , [] ) "[@Citekey]{.csl_field.}"
+      , SoftBreak
+      , Emph
+          [ Str "Add"
+          , Space
+          , Str "extra"
+          , Space
+          , Str "dot"
+          , Space
+          , Str "at"
+          , Space
+          , Str "the"
+          , Space
+          , Str "end"
+          , Space
+          , Str "of"
+          , Space
+          , Str "the"
+          , Space
+          , Str "field"
+          , Space
+          , Str "name."
+          ]
+      ]
+  , Para
+      [ Str "author:"
+      , Space
+      , Str "Trott"
+      , Space
+      , Str "("
+      , Code ( "" , [] , [] ) "[@Trott2014]{.author.}"
+      , Str ")"
+      , SoftBreak
+      , Str "title:"
+      , Space
+      , Emph [ Str "Aristotle on the nature of community" ]
+      , Space
+      , Str "("
+      , Code ( "" , [] , [] ) "[@Trott2014]{.title.}"
+      , Str ")"
+      ]
+  , Header
+      2
+      ( "cite-field-with-index" , [] , [] )
+      [ Emph [ Str "Cite" , Space , Str "field" ]
+      , Space
+      , Str "with"
+      , Space
+      , Str "index"
+      ]
+  , Para
+      [ Str "Syntax:"
+      , Space
+      , Code ( "" , [] , [] ) "[@Citekey]{.editor_first}"
+      , Space
+      , Str "|"
+      , Space
+      , Code ( "" , [] , [] ) "[@Citekey]{.editor_second}"
+      , Space
+      , Str "|"
+      , Space
+      , Code ( "" , [] , [] ) "[@Citekey]{.editor_third}"
+      ]
+  , Para
+      [ Str "editor"
+      , Space
+      , Str "1:"
+      , Space
+      , Cite
+          [ Citation
+              { citationId = "ENSusemihlApelt1903"
+              , citationPrefix = []
+              , citationSuffix = []
+              , citationMode = AuthorInText
+              , citationNoteNum = 11
+              , citationHash = 0
+              }
+          ]
+          [ Link
+              ( "" , [] , [] )
+              [ Str "Susemihl" ]
+              ( "#ref-ENSusemihlApelt1903" , "" )
+          ]
+      , Space
+      , Str "("
+      , Code
+          ( "" , [] , [] ) "[@ENSusemihlApelt1903]{.editor_first}"
+      , Str ")"
+      , SoftBreak
+      , Str "editor"
+      , Space
+      , Str "2:"
+      , Space
+      , Cite
+          [ Citation
+              { citationId = "ENSusemihlApelt1903"
+              , citationPrefix = []
+              , citationSuffix = []
+              , citationMode = AuthorInText
+              , citationNoteNum = 12
+              , citationHash = 0
+              }
+          ]
+          [ Link
+              ( "" , [] , [] )
+              [ Str "Apelt" ]
+              ( "#ref-ENSusemihlApelt1903" , "" )
+          ]
+      , Space
+      , Str "("
+      , Code
+          ( "" , [] , [] ) "[@ENSusemihlApelt1903]{.editor_second}"
+      , Str ")"
+      ]
+  , Para
+      [ Str "editor"
+      , Space
+      , Str "1:"
+      , Space
+      , Str "Susemihl"
+      , Space
+      , Str "("
+      , Code
+          ( "" , [] , [] ) "[@ENSusemihlApelt1903]{.editor_first.}"
+      , Str ")"
+      , SoftBreak
+      , Str "editor"
+      , Space
+      , Str "2:"
+      , Space
+      , Str "Apelt"
+      , Space
+      , Str "("
+      , Code
+          ( "" , [] , [] ) "[@ENSusemihlApelt1903]{.editor_second.}"
+      , Str ")"
+      ]
+  , Header
+      1
+      ( "bibliography" , [ "unnumbered" ] , [] )
+      [ Str "Bibliography" ]
+  , Div
+      ( "refs"
+      , [ "references" , "csl-bib-body" , "hanging-indent" ]
+      , []
+      )
+      [ Div
+          ( "ref-ENSusemihlApelt1903" , [ "csl-entry" ] , [] )
+          [ Para
+              [ Str "Aristotelis."
+              , Space
+              , Str "1903."
+              , Space
+              , Emph [ Str "Ethica" , Space , Str "Nicomachea" ]
+              , Str "."
+              , Space
+              , Str "Edited"
+              , Space
+              , Str "by"
+              , Space
+              , Str "Franz"
+              , Space
+              , Str "Susemihl"
+              , Space
+              , Str "and"
+              , Space
+              , Str "Otto"
+              , Space
+              , Str "Apelt."
+              , Space
+              , Str "Leipzig:"
+              , Space
+              , Str "Teubner."
+              ]
+          ]
+      , Div
+          ( "ref-DA" , [ "csl-entry" ] , [] )
+          [ Para
+              [ Str "Aristotle."
+              , Space
+              , Str "1831."
+              , Space
+              , Span
+                  ( "" , [] , [] )
+                  [ Str "\8220"
+                  , Str "De"
+                  , Space
+                  , Str "Anima"
+                  , Str "."
+                  , Str "\8221"
+                  ]
+              , Space
+              , Str "In"
+              , Space
+              , Emph [ Str "Aristotelis" , Space , Str "Opera" ]
+              , Str ","
+              , Space
+              , Str "edited"
+              , Space
+              , Str "by"
+              , Space
+              , Str "Immanuel"
+              , Space
+              , Str "Bekker,"
+              , Space
+              , Str "402a01\8211\&435b25."
+              , Space
+              , Str "Berlim:"
+              , Space
+              , Str "Reimer."
+              , Space
+              , Link
+                  ( "" , [] , [] )
+                  [ Str "www.google.com" ]
+                  ( "https://www.google.com" , "" )
+              , Str "."
+              ]
+          ]
+      , Div
+          ( "ref-Trott2014" , [ "csl-entry" ] , [] )
+          [ Para
+              [ Str "Trott,"
+              , Space
+              , Str "Adriel"
+              , Space
+              , Str "M."
+              , Space
+              , Str "2014."
+              , Space
+              , Emph
+                  [ Str "Aristotle"
+                  , Space
+                  , Str "on"
+                  , Space
+                  , Str "the"
+                  , Space
+                  , Str "Nature"
+                  , Space
+                  , Str "of"
+                  , Space
+                  , Str "Community"
+                  ]
+              , Str "."
+              , Space
+              , Str "CUP."
+              , Space
+              , Link
+                  ( "" , [] , [] )
+                  [ Str "www.google.com" ]
+                  ( "https://www.google.com" , "" )
+              , Str "."
+              ]
+          ]
+      ]
+  ]

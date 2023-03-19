@@ -154,11 +154,6 @@ $(QUARTO_EXT_DIR)/_extension.yml: _extensions/$(FILTER_NAME)
 # The filter file must be below the quarto _extensions folder: a
 # symlink in the extension would not work due to the way in which
 # quarto installs extensions.
-$(QUARTO_EXT_DIR)/$(FILTER_FILE): $(FILTER_FILE) $(QUARTO_EXT_DIR)
-	if [ ! -L $(FILTER_FILE) ]; then \
-	    mv $(FILTER_FILE) $(QUARTO_EXT_DIR)/$(FILTER_FILE) && \
-	    ln -s $(QUARTO_EXT_DIR)/$(FILTER_FILE) $(FILTER_FILE); \
-	fi
 
 #
 # Release
