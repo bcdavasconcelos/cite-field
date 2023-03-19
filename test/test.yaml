@@ -1,0 +1,10 @@
+input-files: ["test/input.md"]
+standalone: true
+verbosity: ERROR
+csl: ${.}/chicago-author-date-with-note.csl
+metadata:
+  link-citations: true
+  link-fields: true
+filters:
+  - {type: lua, path: citeproc.lua}
+  - {type: lua, path: citefield.lua}

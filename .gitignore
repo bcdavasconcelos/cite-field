@@ -7,3 +7,5 @@ pandoclog.json
 .Rproj.user
 
 /.luarc.json
+
+/.quarto/

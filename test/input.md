@@ -1,50 +1,38 @@
 ---
-title: Lorem ipsum
+title: Cite Field
 author: Nullus
-link-fields: true
-link-citations: true
-mainfont: Alegreya
-citeproc: false
-filters:
-  - citeproc.lua
-  - citefield.lua
 ---
-
-
-- [@DA]{.author.}  
-- [@DA]{.title.}  
-
-
-
-# *Cite field*
 
 Syntax: `[@Citekey]{.csl_field}`  
 
-[@Trott2014]{.author}, [@Trott2014]{.title}  <!-- One at a time -->  
-[@DA; @Trott2014]{.title}  <!-- Not allowed -->  
+This: `[@Trott2014]{.author}, [@Trott2014]{.title}` ✅  
+Will render as: [@Trott2014]{.author}, [@Trott2014]{.title}.
 
-author: [@DA]{.author}  
-abbreviation: [@DA]{.title-short}  
-title: [@DA]{.title}  
-origtitle: [@DA]{.original-title}
+This: `[@DA; @Trott2014]{.title}` ❌  
+Will render as: [@DA; @Trott2014]{.title}. 
+
+author: [@DA]{.author} (`[@DA]{.author}`)  
+abbreviation: [@DA]{.title-short} (`[@DA]{.title-short}`)    
+title: [@DA]{.title} (`[@DA]{.title}`)  
+origtitle: [@DA]{.original-title} (`[@DA]{.original-title}`)    
 
 ## *Cite field* with no link
 
 Syntax: `[@Citekey]{.csl_field.}`  
-*Add extra dot at the end of the field name.*  
+*Add extra dot at the end of the field name.*
 
-author: [@Trott2014]{.author.}  
-title: [@Trott2014]{.title.}  
+author: [@Trott2014]{.author.} (`[@Trott2014]{.author.}`)   
+title: [@Trott2014]{.title.} (`[@Trott2014]{.title.}`)
 
 ## *Cite field* with index
 
 Syntax: `[@Citekey]{.editor_first}` |  `[@Citekey]{.editor_second}` | `[@Citekey]{.editor_third}`
 
-editor 1: [@ENSusemihlApelt1903]{.editor_first}  
-editor 2: [@ENSusemihlApelt1903]{.editor_second}  
+editor 1: [@ENSusemihlApelt1903]{.editor_first} (`[@ENSusemihlApelt1903]{.editor_first}`)  
+editor 2: [@ENSusemihlApelt1903]{.editor_second} (`[@ENSusemihlApelt1903]{.editor_second}`)  
 
-editor 1: [@ENSusemihlApelt1903]{.editor_first.}  
-editor 2: [@ENSusemihlApelt1903]{.editor_second.}  
+editor 1: [@ENSusemihlApelt1903]{.editor_first.} (`[@ENSusemihlApelt1903]{.editor_first.}`)  
+editor 2: [@ENSusemihlApelt1903]{.editor_second.} (`[@ENSusemihlApelt1903]{.editor_second.}`)  
 
 
 ## Error trapping
@@ -102,3 +90,4 @@ references:
   title: Ethica nicomachea
   type: book
 ---
+

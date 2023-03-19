@@ -1,0 +1,17 @@
+project:
+  type: default
+
+output-dir: test
+
+render:
+- test/input.md
+
+csl: chicago-author-date-with-note.csl
+
+filters:
+- citeproc
+- citefield
+# - quarto
+
+profile:
+  group: ['generate','test']
