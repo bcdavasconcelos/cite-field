@@ -1,6 +1,8 @@
 # Cite Field for Pandoc Citeproc
 
-This filter is part of [📚 Cite Tools for Pandoc and Quarto](https://github.com/bcdavasconcelos/citetools).
+- This filter is part of [📚 Cite Tools for Pandoc and Quarto](https://github.com/bcdavasconcelos/citetools).
+- See the full documentation at [📚 Cite Tools - Cite Field](https://bcdavasconcelos.github.io/citetools/docs_qmd/03-cite-field.html).
+- Make sure to check out [🚀 ScrivQ](https://github.com/bcdavasconcelos/ScrivQ/), the Scrivener template for Quarto and Pandoc.
 
 <!-- [![GitHub build status][CI badge]][CI workflow] -->
 
