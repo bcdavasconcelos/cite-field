@@ -1,6 +1,6 @@
 --- https://github.com/bcdavasconcelos/citefield
 --- citefield.lua
---- 1.0.3
+--- 1.0.4
 --- Copyright: © 2023 - Albert Krewinkel & Bernardo Vasconcelos
 --- License: MIT – see LICENSE for details
 
@@ -89,14 +89,17 @@ function Pandoc (doc)
       local ref = doc.meta.references:find_if( -- get reference
       function (r) return cite_id == r.id end
     ) -- end of get reference
-    
-      if ref and ref[the_arg] then -- if field is not empty
+
+      if ref[the_arg] then -- if field is not empty
         local content = ref[the_arg] -- get field
         local title_field_emph = get_options(doc.meta).title_field_emph
         if the_arg == "author" or the_arg == "editor" or the_arg == "translator" then -- if field contains name
           if content[ordinal] then -- if name[ord] exists
             if content[ordinal]["family"] then -- if name[ord] contains family name
-              the_result = ref[the_arg][ordinal]["family"] -- get family name
+              local prefix = ref[the_arg][ordinal]["non-dropping-particle"] or nil
+              if prefix then prefix = prefix .. " " end
+              the_result = (prefix or "") .. ref[the_arg][ordinal]["family"]
+              -- the_result = ref[the_arg][ordinal]["family"] -- get family name
               else if ref[the_arg][ordinal]["literal"] then -- if name[ord] does not contain family name, but contains literal
                 the_result = ref[the_arg][ordinal]["literal"]
               else -- if field does not contain family name or literal
